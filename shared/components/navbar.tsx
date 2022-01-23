@@ -83,9 +83,10 @@ const Navbar = (): JSX.Element => {
         </div>
         <div className={showMobileNav ? 'block pt-3 transition-all' : 'hidden md:block'}>
           <ul className="md:flex md:flex-row border-pink border-2 md:border-none">
-            {navlinks.map((item) => {
-              return <NavItem title={item.title} href={item.href} key={item.href} />;
-            })}
+            {navlinks &&
+              navlinks.map((item) => {
+                return <NavItem title={item.title} href={item.href} key={item.href} />;
+              })}
           </ul>
         </div>
       </nav>

@@ -1,11 +1,11 @@
 {
-  "name": "harsh-web-3",
+  "name": "Kiran",
   "version": "0.1.0",
   "private": true,
   "author": {
-    "name": "Harsh Goel",
-    "email": "harshgoel05@gmail.com",
-    "url": "https://harshgoel.me"
+    "name": "Kiran Mate",
+    "email": "krmate634@gmail.com",
+    "url": "https://linktr.ee/kiranm"
   },
   "scripts": {
     "dev": "next dev",

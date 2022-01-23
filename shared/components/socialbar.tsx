@@ -25,16 +25,17 @@ export default function SocialBar(): JSX.Element {
   return (
     <div className="fixed left-3 md:left-5 bottom-0 z-30">
       <div className="flex flex-col  justify-center items-center ">
-        {socialMedia.map((item) => {
-          return (
-            <SocialIcon
-              link={item.link}
-              image_file={item.image_file}
-              alt_text={item.alt_text}
-              key={item.image_file}
-            />
-          );
-        })}
+        {socialMedia &&
+          socialMedia.map((item) => {
+            return (
+              <SocialIcon
+                link={item.link}
+                image_file={item.image_file}
+                alt_text={item.alt_text}
+                key={item.image_file}
+              />
+            );
+          })}
         <div className="h-20 md:h-32 mt-2 w-1/12 bg-violet" />
       </div>
     </div>

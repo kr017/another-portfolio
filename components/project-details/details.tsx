@@ -41,14 +41,14 @@ export default function Details({ project }: Props): JSX.Element {
           <p className="text-violet lg:px-20 mx-auto w-2/3">{project.description}</p>
         </div>
       )}
-      {project.tags && (
+      {project?.tags && (
         <div className="text-center mb-10">
           <h1 className="text-5xl sm:text-3xl text-white font-bold mb-8">
             What <span className="text-pink">Technologies</span> are used?
           </h1>
           <div className="flex flex-col sm:flex-row justify-center items-center text-center">
-            {project.tags.map(
-              (t): JSX.Element => {
+            {project.tags &&
+              project.tags.map((t): JSX.Element => {
                 const tech = technologies.find((te) => te.name === t);
                 return (
                   tech && (
@@ -62,8 +62,7 @@ export default function Details({ project }: Props): JSX.Element {
                     </div>
                   )
                 );
-              }
-            )}
+              })}
           </div>
         </div>
       )}

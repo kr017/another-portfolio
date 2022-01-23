@@ -17,8 +17,8 @@ export default function Details(): JSX.Element {
       <div className="ml-4 sm:mx-12 md:mx-16 grid grid-cols-12 gap-4 place-items-center">
         <div className="col-span-12 sm:col-span-6 flex flex-col ">
           <div className="px-10 py-5">
-            {companyDetails.map(
-              (company, index): JSX.Element => {
+            {companyDetails &&
+              companyDetails.map((company, index): JSX.Element => {
                 if (company.featured) {
                   numbering += 1;
                   return (
@@ -46,8 +46,7 @@ export default function Details(): JSX.Element {
                     </div>
                   );
                 }
-              }
-            )}
+              })}
           </div>
         </div>
         <div className="col-span-12 sm:col-span-6 flex flex-col justify-center items-center min-h-full">

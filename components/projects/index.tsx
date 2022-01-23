@@ -7,12 +7,14 @@ const ProjectsPage = (): JSX.Element => {
   const projects = useContext(ProjectDetailsContext);
 
   const category = [{ value: 'all', label: 'ALL' }];
-  projects.forEach((p) =>
-    p.category.forEach((cat) => {
-      if (!category.find((c) => c.value === cat))
-        category.push({ value: cat, label: cat.toUpperCase() });
-    })
-  );
+  if (projects) {
+    projects.forEach((p) =>
+      p.category.forEach((cat) => {
+        if (!category.find((c) => c.value === cat))
+          category.push({ value: cat, label: cat.toUpperCase() });
+      })
+    );
+  }
   const [active, setActive] = useState('all');
 
   function changeProjects(c) {
@@ -34,31 +36,33 @@ const ProjectsPage = (): JSX.Element => {
             </div>
             <div>
               <div className="mx-auto text-center">
-                {category.map((c) => (
-                  <button
-                    key={c.value}
-                    type="button"
-                    onClick={() => changeProjects(c)}
-                    className={`${
-                      active === c.value
-                        ? 'text-blue bg-pink border-transparent'
-                        : 'text-white border-pink'
-                    } w-32 mx-4
+                {category &&
+                  category.map((c) => (
+                    <button
+                      key={c.value}
+                      type="button"
+                      onClick={() => changeProjects(c)}
+                      className={`${
+                        active === c.value
+                          ? 'text-blue bg-pink border-transparent'
+                          : 'text-white border-pink'
+                      } w-32 mx-4
                     border-2 py-2 rounded-xl lg:mx-4 outline-none mb-2 focus:outline-none transition-all hover:shadow-light-3xl
                     `}>
-                    {c.label}
-                  </button>
-                ))}
+                      {c.label}
+                    </button>
+                  ))}
               </div>
             </div>
             <div className="grid md:grid-cols-2 gap-4 place-items-center">
-              {projects.map((project: Project) => (
-                <ProjectCard
-                  project={project}
-                  key={project.slug}
-                  filter={{ key: 'category', value: active }}
-                />
-              ))}
+              {projects &&
+                projects.map((project: Project) => (
+                  <ProjectCard
+                    project={project}
+                    key={project.slug}
+                    filter={{ key: 'category', value: active }}
+                  />
+                ))}
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { InlineWidget } from 'react-calendly';
+// import { InlineWidget } from 'react-calendly';
 import { PersonalDetailsContext } from 'shared/utils/contexts';
 import { PersonalDetails } from 'shared/utils/types';
 
@@ -18,26 +18,27 @@ export default function Connect(): JSX.Element {
                 Schedule a 30 minutes call with me via Google meet.
               </p>
               <div className="flex flex-row justify-center lg:justify-start items-end">
-                {socialMedia.map(({ alt_text, image_file, link }) => {
-                  return (
-                    <a href={link} key={link}>
-                      <img
-                        src={image_file}
-                        alt={alt_text}
-                        className="w-6 md:w-10 h-10 m-2 md:m-2 transition-all hover:opacity-40 transform hover:scale-75"
-                      />
-                    </a>
-                  );
-                })}
+                {socialMedia &&
+                  socialMedia.map(({ alt_text, image_file, link }) => {
+                    return (
+                      <a href={link} key={link}>
+                        <img
+                          src={image_file}
+                          alt={alt_text}
+                          className="w-6 md:w-10 h-10 m-2 md:m-2 transition-all hover:opacity-40 transform hover:scale-75"
+                        />
+                      </a>
+                    );
+                  })}
               </div>
             </div>
           </div>
           <div className="ml-auto w-full px-10 lg:px-20 lg:w-5/12 h-auto">
-            <InlineWidget
+            {/* <InlineWidget
               styles={{ height: '600px', width: '100%', margin: 'auto' }}
               pageSettings={{ textColor: '#B8C1EC', primaryColor: '#B8C1EC' }}
               url={calendyUrl}
-            />
+            /> */}
           </div>
         </div>
       </div>
