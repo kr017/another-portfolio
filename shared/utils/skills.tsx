@@ -18,24 +18,12 @@ const SKILLS: Skill[] = [
     src: '/images/skills/js.svg'
   },
   {
-    name: 'AngularJS',
-    src: '/images/skills/ts.svg'
-  },
-  {
-    name: 'React Native',
-    src: '/images/skills/react-native.svg'
-  },
-  {
     name: 'ExpressJS',
     src: '/images/skills/angular.svg'
   },
   {
     name: 'MongoDB',
     src: '/images/skills/express.svg'
-  },
-  {
-    name: 'Figma',
-    src: '/images/skills/figma.svg'
   },
   {
     name: 'NextJs',
